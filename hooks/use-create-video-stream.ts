@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { stopTracks } from '@/common/utils'
 
 export default function useCreateVideoStream(
 	constraints = { audio: false, video: true }
