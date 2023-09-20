@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { JoinButton } from '../style';
+import { JoinButton } from '../style'
 
 export default function JoinRoom() {
   const [code, setCode] = useState<string | null>()
@@ -25,5 +25,5 @@ export default function JoinRoom() {
       />
       <JoinButton onClick={() => onSubmit()}>Join</JoinButton>
     </div>
-  );
-};
+  )
+} 

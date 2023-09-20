@@ -1,26 +1,26 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import { Dispatch, SetStateAction, useCallback } from 'react'
 
 export default function useAddVideoStream({
   setVideoRefs,
   setVideos,
 }: {
-  setVideoRefs: Dispatch<SetStateAction<Record<string, HTMLDivElement>>>;
-  setVideos: Dispatch<SetStateAction<JSX.Element[]>>;
+  setVideoRefs: Dispatch<SetStateAction<Record<string, HTMLDivElement>>>
+  setVideos: Dispatch<SetStateAction<JSX.Element[]>>
 }) {
   const addVideoStream = useCallback((id: string, stream: MediaStream) => {
-    if (!id) return;
+    if (!id) return
 
     setVideos((prev: JSX.Element[]) => [
       ...prev,
       <div
         key={id}
         ref={(node) => {
-          if (node) setVideoRefs((prev) => ({ ...prev, [id]: node }));
+          if (node) setVideoRefs((prev) => ({ ...prev, [id]: node }))
         }}
       >
         <video
           ref={(node) => {
-            if (node) node.srcObject = stream;
+            if (node) node.srcObject = stream
           }}
           className="rounded-3xl max-w-md max-h-80 mr-4"
           muted
@@ -30,8 +30,8 @@ export default function useAddVideoStream({
           <span className="text-blue-600">{id}</span>
         </p>
       </div>,
-    ]);
-  }, [setVideoRefs, setVideos]);
+    ])
+  }, [setVideoRefs, setVideos])
 
-  return addVideoStream;
-};
+  return addVideoStream
+} 

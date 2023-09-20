@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-import { UserIcon } from '@/assets/icons';
-import { useSetupMeeting } from '@/hooks';
+import { UserIcon } from '@/assets/icons'
+import { useSetupMeeting } from '@/hooks'
 import { stopTracks } from '@/common/utils'
 
 export default function MeetingRoom() {
@@ -28,5 +28,5 @@ export default function MeetingRoom() {
         </>
       )}
     </div>
-  );
-};
+  )
+} 
