@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
 import useSocketContext from './use-socket-context'
 
-const useOnOpenPeer = ({ peer, roomId }: { peer: any; roomId: string }) => {
+export default function useOnOpenPeer({
+	peer,
+	roomId,
+}: {
+	peer: any
+	roomId: string
+}) {
 	const [me, setMe] = useState('')
 	const { socket } = useSocketContext()
 
@@ -18,5 +24,3 @@ const useOnOpenPeer = ({ peer, roomId }: { peer: any; roomId: string }) => {
 
 	return { me }
 }
-
-export default useOnOpenPeer

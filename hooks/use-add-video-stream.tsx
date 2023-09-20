@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 
-const useAddVideoStream = ({
+export default function useAddVideoStream({
   setVideoRefs,
   setVideos,
 }: {
   setVideoRefs: Dispatch<SetStateAction<Record<string, HTMLDivElement>>>;
   setVideos: Dispatch<SetStateAction<JSX.Element[]>>;
-}) => {
+}) {
   const addVideoStream = useCallback((id: string, stream: MediaStream) => {
     if (!id) return;
 
@@ -35,5 +35,3 @@ const useAddVideoStream = ({
 
   return addVideoStream;
 };
-
-export default useAddVideoStream;

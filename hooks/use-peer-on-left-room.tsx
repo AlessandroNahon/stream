@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useSocketContext } from './';
 
-const usePeerOnLeftRoom = ({
+export default function usePeerOnLeftRoom({
 	peers,
 	videoRefs,
 }: {
 	peers: Record<string, any>;
 	videoRefs: Record<string, HTMLDivElement>;
-}) => {
+}) {
 	const { socket } = useSocketContext();
 
 	useEffect(() => {
@@ -20,5 +20,3 @@ const usePeerOnLeftRoom = ({
 		});
 	}, [Object.keys(peers).length, Object.keys(videoRefs).length]);
 };
-
-export default usePeerOnLeftRoom;

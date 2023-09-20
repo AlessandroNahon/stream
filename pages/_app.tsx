@@ -6,7 +6,7 @@ import { TSocket } from '@/common/types';
 
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const [socket, setSocket] = useState<TSocket | null>(null);
 
   return (
@@ -15,5 +15,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </SocketContext.Provider>
   );
 }
-
-export default MyApp;

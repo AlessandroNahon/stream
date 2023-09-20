@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 import { JoinButton } from '../style';
 
-function JoinRoom() {
+export default function JoinRoom() {
   const [code, setCode] = useState<string | null>()
   const router = useRouter()
 
@@ -27,5 +27,3 @@ function JoinRoom() {
     </div>
   );
 };
-
-export default JoinRoom;

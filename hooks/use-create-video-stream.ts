@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { stopTracks } from '@/common/utils'
 
-const useCreateVideoStream = (constraints = { audio: false, video: true }) => {
+export default function useCreateVideoStream(
+	constraints = { audio: false, video: true }
+) {
 	const [stream, setStream] = useState<MediaStream | null>(null)
 
 	useEffect(() => {
@@ -24,5 +26,3 @@ const useCreateVideoStream = (constraints = { audio: false, video: true }) => {
 
 	return { stream }
 }
-
-export default useCreateVideoStream

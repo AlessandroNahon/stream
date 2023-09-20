@@ -2,7 +2,10 @@ import { NextApiRequest } from 'next'
 import { Server as ServerIO } from 'socket.io'
 import { NextApiResponseServerIO } from '../../common/types'
 
-const socketHandler = (req: NextApiRequest, res: NextApiResponseServerIO) => {
+export default function socketHandler(
+	req: NextApiRequest,
+	res: NextApiResponseServerIO
+) {
 	if (!res.socket.server.io) {
 		console.log('Socket is initializing')
 
@@ -33,5 +36,3 @@ const socketHandler = (req: NextApiRequest, res: NextApiResponseServerIO) => {
 
 	res.end()
 }
-
-export default socketHandler

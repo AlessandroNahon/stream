@@ -12,7 +12,7 @@ const defaultValues: {
 
 export const SocketContext = createContext(defaultValues)
 
-const useSocketContext = () => {
+export default function useSocketContext() {
 	const { socket, setSocket } = useContext(SocketContext)
 
 	useEffect(() => {
@@ -27,5 +27,3 @@ const useSocketContext = () => {
 
 	return { socket, setSocket }
 }
-
-export default useSocketContext

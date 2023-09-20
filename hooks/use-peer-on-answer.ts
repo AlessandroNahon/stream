@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 
-const usePeerOnAnswer = ({
+export default function usePeerOnAnswer({
 	peer,
 	stream,
 	addVideoStream,
@@ -10,7 +10,7 @@ const usePeerOnAnswer = ({
 	stream: MediaStream | null
 	addVideoStream: (id: string, stream: MediaStream) => void
 	setPeers: Dispatch<SetStateAction<Record<string, any>>>
-}) => {
+}) {
 	useEffect(() => {
 		if (!peer || !stream) return
 
@@ -31,5 +31,3 @@ const usePeerOnAnswer = ({
 		})
 	}, [peer, stream])
 }
-
-export default usePeerOnAnswer

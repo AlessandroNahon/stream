@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useSocketContext } from './'
 
-const usePeerOnJoinRoom = ({
+export default function usePeerOnJoinRoom({
 	stream,
 	peer,
 	addVideoStream,
@@ -11,7 +11,7 @@ const usePeerOnJoinRoom = ({
 	stream: MediaStream | null
 	addVideoStream: (id: string, stream: MediaStream) => void
 	setPeers: Dispatch<SetStateAction<Record<string, any>>>
-}) => {
+}) {
 	const { socket } = useSocketContext()
 
 	useEffect(() => {
@@ -34,5 +34,3 @@ const usePeerOnJoinRoom = ({
 		})
 	}, [socket, stream, peer])
 }
-
-export default usePeerOnJoinRoom

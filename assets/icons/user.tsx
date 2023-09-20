@@ -1,4 +1,4 @@
-const User = ({ className }: { className: string }) => {
+export default function User({ className }: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,3 @@ const User = ({ className }: { className: string }) => {
     </svg>
   );
 };
-
-export default User;

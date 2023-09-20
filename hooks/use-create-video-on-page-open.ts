@@ -1,7 +1,6 @@
-import { Dispatch, SetStateAction, useEffect } from 'react'
-import { useAddVideoStream } from './'
+import { useEffect } from 'react'
 
-const useCreateVideoOnPageOpen = ({
+export default function useCreateVideoOnPageOpen({
 	id,
 	stream,
 	addVideoStream,
@@ -9,12 +8,10 @@ const useCreateVideoOnPageOpen = ({
 	id: string
 	stream: MediaStream | null
 	addVideoStream: (id: string, stream: MediaStream) => void
-}) => {
+}) {
 	useEffect(() => {
 		if (!stream) return
 
 		addVideoStream(id, stream)
 	}, [id, addVideoStream, stream])
 }
-
-export default useCreateVideoOnPageOpen
