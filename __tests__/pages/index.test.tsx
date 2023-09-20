@@ -1,8 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import Home from '../../pages/index'
-import '@testing-library/jest-dom'
-
-
 
 describe('Home', () => {
 	const useRouter = jest.spyOn(require("next/router"), "useRouter");
@@ -21,6 +18,6 @@ describe('Home', () => {
 			name: 'Start a video call',
 		})
 
-		expect(button.innerHTML).toEqual('Start a video call')
+		expect(button.innerHTML).toBe('Start a video call')
 	})
 })
