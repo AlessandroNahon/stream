@@ -1,4 +1,8 @@
-export default function User({ className }: { className: string }) {
+type Props = {
+  className: string
+}
+
+export default function User({ className }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

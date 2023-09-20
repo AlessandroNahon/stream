@@ -1,17 +1,19 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useSocketContext } from './'
 
+type Props = {
+	peer: any
+	stream: MediaStream | null
+	addVideoStream: (id: string, stream: MediaStream) => void
+	setPeers: Dispatch<SetStateAction<Record<string, any>>>
+}
+
 export default function usePeerOnJoinRoom({
 	stream,
 	peer,
 	addVideoStream,
 	setPeers,
-}: {
-	peer: any
-	stream: MediaStream | null
-	addVideoStream: (id: string, stream: MediaStream) => void
-	setPeers: Dispatch<SetStateAction<Record<string, any>>>
-}) {
+}: Props) {
 	const { socket } = useSocketContext()
 
 	useEffect(() => {

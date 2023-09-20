@@ -1,12 +1,14 @@
 import { Dispatch, SetStateAction, useCallback } from 'react'
 
+type Props = {
+  setVideoRefs: Dispatch<SetStateAction<Record<string, HTMLDivElement>>>
+  setVideos: Dispatch<SetStateAction<JSX.Element[]>>
+}
+
 export default function useAddVideoStream({
   setVideoRefs,
   setVideos,
-}: {
-  setVideoRefs: Dispatch<SetStateAction<Record<string, HTMLDivElement>>>
-  setVideos: Dispatch<SetStateAction<JSX.Element[]>>
-}) {
+}: Props) {
   const addVideoStream = useCallback((id: string, stream: MediaStream) => {
     if (!id) return
 

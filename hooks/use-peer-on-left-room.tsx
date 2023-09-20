@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
 import { useSocketContext } from './'
 
+type Props = {
+	peers: Record<string, any>
+	videoRefs: Record<string, HTMLDivElement>
+}
+
 export default function usePeerOnLeftRoom({
 	peers,
 	videoRefs,
-}: {
-	peers: Record<string, any>
-	videoRefs: Record<string, HTMLDivElement>
-}) {
+}: Props) {
 	const { socket } = useSocketContext()
 
 	useEffect(() => {

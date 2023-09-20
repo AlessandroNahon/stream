@@ -1,16 +1,18 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 
+type Props = {
+	peer: any
+	stream: MediaStream | null
+	addVideoStream: (id: string, stream: MediaStream) => void
+	setPeers: Dispatch<SetStateAction<Record<string, any>>>
+}
+
 export default function usePeerOnAnswer({
 	peer,
 	stream,
 	addVideoStream,
 	setPeers,
-}: {
-	peer: any
-	stream: MediaStream | null
-	addVideoStream: (id: string, stream: MediaStream) => void
-	setPeers: Dispatch<SetStateAction<Record<string, any>>>
-}) {
+}: Props) {
 	useEffect(() => {
 		if (!peer || !stream) return
 
