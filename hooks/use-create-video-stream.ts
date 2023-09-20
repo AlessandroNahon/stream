@@ -17,11 +17,6 @@ export default function useCreateVideoStream(
 		}
 
 		getStream()
-
-		return function cleanup() {
-			if (stream === null) return
-			stopTracks(stream.getTracks())
-		}
 	}, [])
 
 	return { stream }
