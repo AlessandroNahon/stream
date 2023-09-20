@@ -1,6 +1,19 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { useState } from 'react';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { SocketContext } from '@/hooks/use-socket-context';
+import { TSocket } from '@/common/types';
+
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const [socket, setSocket] = useState<TSocket | null>(null);
+
+  return (
+    <SocketContext.Provider value={{ socket, setSocket }}>
+      <Component {...pageProps} />
+    </SocketContext.Provider>
+  );
 }
+
+export default MyApp;
